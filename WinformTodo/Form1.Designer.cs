@@ -32,7 +32,7 @@
             btnClear = new Button();
             btnAdd = new Button();
             lblDueDate = new Label();
-            textBox1 = new TextBox();
+            txtDueDate = new TextBox();
             lblTaskBox = new Label();
             txtTaskDescription = new TextBox();
             gbTaskList = new GroupBox();
@@ -46,19 +46,19 @@
             groupBox1.Controls.Add(btnClear);
             groupBox1.Controls.Add(btnAdd);
             groupBox1.Controls.Add(lblDueDate);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txtDueDate);
             groupBox1.Controls.Add(lblTaskBox);
             groupBox1.Controls.Add(txtTaskDescription);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(204, 105);
+            groupBox1.Size = new Size(456, 105);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Task Form";
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(42, 74);
+            btnClear.Location = new Point(294, 74);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 23);
             btnClear.TabIndex = 5;
@@ -67,12 +67,13 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(123, 74);
+            btnAdd.Location = new Point(375, 74);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add Item";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // lblDueDate
             // 
@@ -83,13 +84,13 @@
             lblDueDate.TabIndex = 3;
             lblDueDate.Text = "Due Date";
             // 
-            // textBox1
+            // txtDueDate
             // 
-            textBox1.Location = new Point(67, 45);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "2025-01-20";
-            textBox1.Size = new Size(131, 23);
-            textBox1.TabIndex = 2;
+            txtDueDate.Location = new Point(67, 45);
+            txtDueDate.Name = "txtDueDate";
+            txtDueDate.PlaceholderText = "2025-01-20";
+            txtDueDate.Size = new Size(383, 23);
+            txtDueDate.TabIndex = 2;
             // 
             // lblTaskBox
             // 
@@ -104,7 +105,7 @@
             // 
             txtTaskDescription.Location = new Point(42, 16);
             txtTaskDescription.Name = "txtTaskDescription";
-            txtTaskDescription.Size = new Size(156, 23);
+            txtTaskDescription.Size = new Size(408, 23);
             txtTaskDescription.TabIndex = 0;
             // 
             // gbTaskList
@@ -112,7 +113,7 @@
             gbTaskList.Controls.Add(lvTasks);
             gbTaskList.Location = new Point(12, 123);
             gbTaskList.Name = "gbTaskList";
-            gbTaskList.Size = new Size(204, 365);
+            gbTaskList.Size = new Size(456, 365);
             gbTaskList.TabIndex = 1;
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
@@ -121,7 +122,7 @@
             // 
             lvTasks.Location = new Point(0, 22);
             lvTasks.Name = "lvTasks";
-            lvTasks.Size = new Size(204, 343);
+            lvTasks.Size = new Size(456, 343);
             lvTasks.TabIndex = 0;
             lvTasks.UseCompatibleStateImageBehavior = false;
             // 
@@ -129,11 +130,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(228, 500);
+            ClientSize = new Size(480, 500);
             Controls.Add(gbTaskList);
             Controls.Add(groupBox1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Todo List";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             gbTaskList.ResumeLayout(false);
@@ -146,7 +147,7 @@
         private Label lblTaskBox;
         private TextBox txtTaskDescription;
         private Label lblDueDate;
-        private TextBox textBox1;
+        private TextBox txtDueDate;
         private Button btnAdd;
         private Button btnClear;
         private GroupBox gbTaskList;
