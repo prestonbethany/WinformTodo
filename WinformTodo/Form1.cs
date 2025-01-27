@@ -11,9 +11,22 @@ namespace WinformTodo
         {
             var date = DateTime.Parse(txtDueDate.Text);
             Todo myTodo = new Todo(txtTaskDescription.Text, date);
-            
-            MessageBox.Show(myTodo.ToString());
 
+            lvTasks.Items.Add(myTodo.ToString());
+
+            ClearForm();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+            MessageBox.Show("Form cleared.");
+        }
+
+        private void ClearForm()
+        {
+            txtTaskDescription.Clear();
+            txtDueDate.Clear();
         }
     }
 }
