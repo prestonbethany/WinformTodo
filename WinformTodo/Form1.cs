@@ -2,9 +2,13 @@ namespace WinformTodo
 {
     public partial class Form1 : Form
     {
+        private List<Todo> TaskList { get; set; }
+
         public Form1()
         {
             InitializeComponent();
+            TaskList = new List<Todo>();
+
         }
 
         private void submitForm(object sender, EventArgs e)
@@ -17,7 +21,7 @@ namespace WinformTodo
 
             if (Validators.IsTextNull(txtTaskDescription))
             {
-                MessageBox.Show("How did you do that? You nulled the text box.")
+                MessageBox.Show("How did you do that? You nulled the text box.");
                 return;
             }
             
@@ -29,15 +33,33 @@ namespace WinformTodo
 
             if (!Validators.IsValidDate(txtDueDate))
             {
-                MessageBox.Show("Date is incorrectly formatted, please resubmit.")
+                MessageBox.Show("Date is incorrectly formatted, please resubmit."); 
             }
 
             var date = DateTime.Parse(txtDueDate.Text);
             Todo myTodo = new Todo(txtTaskDescription.Text, date);
+            TaskList.Add(myTodo);
 
-            lbTaskList.Items.Add(myTodo.ToString());
+            UpdateListBox();
+            //lbTaskList.Items.Add(myTodo.ToString());
 
             ClearForm();
+        }
+
+        public void UpdateListBox()
+        {
+            lbTaskList.Items.Clear();
+
+            var tempList = TaskList.Where(t => t.IsDone == false)
+                .OrderBy(t => t.DueDate)
+                .ToList();
+            
+            for (int i = 0; i < tempList.Count; i++)
+            {
+                lbTaskList.Items.Add(tempList[i].ToString());
+            }
+
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
