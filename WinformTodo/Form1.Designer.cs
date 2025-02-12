@@ -36,7 +36,7 @@
             lblTaskBox = new Label();
             txtTaskDescription = new TextBox();
             gbTaskList = new GroupBox();
-            lbTaskList = new ListBox();
+            fpTasks = new FlowLayoutPanel();
             groupBox1.SuspendLayout();
             gbTaskList.SuspendLayout();
             SuspendLayout();
@@ -114,7 +114,7 @@
             // 
             // gbTaskList
             // 
-            gbTaskList.Controls.Add(lbTaskList);
+            gbTaskList.Controls.Add(fpTasks);
             gbTaskList.Location = new Point(12, 123);
             gbTaskList.Name = "gbTaskList";
             gbTaskList.Size = new Size(456, 365);
@@ -122,15 +122,13 @@
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
             // 
-            // lbTaskList
+            // fpTasks
             // 
-            lbTaskList.FormattingEnabled = true;
-            lbTaskList.ItemHeight = 15;
-            lbTaskList.Location = new Point(6, 22);
-            lbTaskList.Name = "lbTaskList";
-            lbTaskList.Size = new Size(444, 334);
-            lbTaskList.TabIndex = 1;
-            lbTaskList.SelectedIndexChanged += lbTaskList_SelectedIndexChanged;
+            fpTasks.AutoScroll = true;
+            fpTasks.Location = new Point(6, 22);
+            fpTasks.Name = "fpTasks";
+            fpTasks.Size = new Size(444, 337);
+            fpTasks.TabIndex = 0;
             // 
             // Form1
             // 
@@ -157,6 +155,6 @@
         private Button btnAdd;
         private Button btnClear;
         private GroupBox gbTaskList;
-        private ListBox lbTaskList;
+        private FlowLayoutPanel fpTasks;
     }
 }
