@@ -37,8 +37,10 @@
             // 
             // btnComplete
             // 
+            btnComplete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnComplete.AutoSize = true;
-            btnComplete.Location = new Point(220, 122);
+            btnComplete.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnComplete.Location = new Point(227, 3);
             btnComplete.Name = "btnComplete";
             btnComplete.Size = new Size(99, 25);
             btnComplete.TabIndex = 0;
@@ -68,15 +70,13 @@
             // 
             // lblTaskDescription
             // 
-            lblTaskDescription.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblTaskDescription.AutoSize = true;
             lblTaskDescription.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTaskDescription.Location = new Point(3, 41);
-            lblTaskDescription.MaximumSize = new Size(294, 0);
             lblTaskDescription.Name = "lblTaskDescription";
-            lblTaskDescription.Size = new Size(280, 50);
+            lblTaskDescription.Size = new Size(1023, 25);
             lblTaskDescription.TabIndex = 3;
-            lblTaskDescription.Text = "This is a description of a task to be done";
+            lblTaskDescription.Text = "This is a description of a task to be doneThis is a description of a task to be doneThis is a description of a task to be done";
             // 
             // lblDueDate
             // 
@@ -93,13 +93,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(lblDueDate);
             Controls.Add(lblTaskDescription);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnComplete);
             Name = "TaskControl";
-            Size = new Size(326, 150);
+            Size = new Size(1029, 66);
             ResumeLayout(false);
             PerformLayout();
         }
